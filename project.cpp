@@ -34,3 +34,31 @@ public:
         return veg_name[n];
     }
 };
+class Meat
+{
+    int i;
+    string meat_name[3] = {"Beaf", "Mutton", "Chicken"};
+    float meat_price[3];
+
+public:
+    Meat()
+    {
+        this->meat_price[0] = 500;
+        this->meat_price[1] = 1000;
+        this->meat_price[2] = 200;
+    }
+    Meat(int i, int t)
+    {
+        this->meat_price[i] = t;
+    }
+
+    float getVal(int n)
+    {
+        return meat_price[n];
+    }
+
+    string getName(int n)
+    {
+        return meat_name[n];
+    }
+};
