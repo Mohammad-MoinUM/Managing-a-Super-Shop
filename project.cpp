@@ -128,3 +128,11 @@ public:
         lq = Liquid(index, n);
     }
 };
+
+
+int main()
+{
+    Shop sp;
+    loop(sp);
+    return 0;
+}
