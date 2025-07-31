@@ -1,4 +1,7 @@
-* Name: Mohammad Moin Uddin MOIN
+
+
+
+/* Name: Mohammad Moin Uddin MOIN
 Roll:2107111*/
 
 
@@ -34,6 +37,7 @@ public:
         return veg_name[n];
     }
 };
+
 class Meat
 {
     int i;
@@ -62,6 +66,7 @@ public:
         return meat_name[n];
     }
 };
+
 class Liquid
 {
     int i;
@@ -128,6 +133,7 @@ public:
         lq = Liquid(index, n);
     }
 };
+
 void loop(Shop &o)
 {
     int x, y;
@@ -240,6 +246,114 @@ void loop(Shop &o)
             }
         }
 
+        else if (x == 2)
+        {
+            string str;
+            cout << "please sir give your passward\n";
+            cin >> str;
+            if (o.mn.matchPass(&str))
+            {
+                cout << "--------Set Price---------\n\n";
+                cout << "1. Vegetables\n";
+                cout << "2. Meat\n";
+                cout << "3. Liquid items\n";
+                cout << "Please, sir, make your choice from 1, 2, 3 : ";
+                cin >> y;
+
+                if (y == 1)
+                {
+                    cout << "\n1. Tomato\n";
+                    cout << "2. Potato\n";
+                    cout << "3. Onion\n";
+
+                    int choice;
+                    cout << "Select a vegetable from above (1, 2, 3): ";
+                    cin >> choice;
+                    if (choice >= 1 && choice <= 3)
+                    {
+                        cout << "Enter New Price: ";
+                        int tk;
+                        cin >> tk;
+                        o.setVeg(choice-1,tk);
+                        cout<<"Price is updated successfully\n\n";
+                    }
+
+                    else
+                    {
+                        cout << "Invalid vegetable choice.\n";
+                    }
+                }
+
+                /// Meats
+
+                else if (y == 2)
+                {
+                    cout << "\n1. Beaf\n";
+                    cout << "2. Mutton\n";
+                    cout << "3. Chicken\n";
+
+                    int choice;
+                    cout << "Select a type of Meat from above (1, 2, 3): ";
+                    cin >> choice;
+
+                    if (choice >= 1 && choice <= 3)
+                    {
+                        cout << "Enter New Price: ";
+                        int tk;
+                        cin >> tk;
+                        o.setMeat(choice-1,tk);
+                        cout<<"Price is updated successfully\n\n";
+                    }
+                    else
+                    {
+                        cout << "Invalid Meat choice.\n";
+                    }
+                }
+
+                /// Liquids
+
+                else if (y == 3)
+                {
+                    cout << "\n1. Oil\n";
+                    cout << "2. Cocacola\n";
+                    cout << "3. Mojo\n";
+
+                    int choice;
+                    cout << "Select a type of Item from above (1, 2, 3): ";
+                    cin >> choice;
+
+                    if (choice >= 1 && choice <= 3)
+                    {
+                        cout << "Enter New Price: ";
+                        int tk;
+                        cin >> tk;
+                        o.setLiq(choice-1,tk);
+                        cout<<"Price is updated successfully\n\n";
+                    }
+                    else
+                    {
+                        cout << "Invalid item choice.\n";
+                    }
+                }
+            }
+            else
+                cout << "\nWrong Password\n";
+            /// Manager///
+
+            getchar();
+            getchar();
+        }
+
+        else if (x == 0)
+        {
+            cout << "\nThank You.\nCome Again\n";
+        }
+        else
+        {
+            cout << "invalid choice ";
+        }
+    } while (x);
+}
 int main()
 {
     Shop sp;
