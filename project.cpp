@@ -128,7 +128,117 @@ public:
         lq = Liquid(index, n);
     }
 };
+void loop(Shop &o)
+{
+    int x, y;
+    do
+    {
+        int choice;
+        system("cls");
+        cout << "1.Are you a coustomer?\n";
+        cout << "2.Are you a Manager?\n";
+        cout << "0.Exit\n";
+        cout << "Tell me your identtity: ";
+        cin >> x;
 
+        /// Vegetables
+        if (x == 1)
+        {
+            cout << "Sir, we have different types of items. These are given below:\n";
+            cout << "1. Vegetables\n";
+            cout << "2. Meat\n";
+            cout << "3. Liquid items\n";
+            cout << "Please, sir, make your choice from 1, 2, 3 : ";
+            cin >> y;
+
+            if (y == 1)
+            {
+                cout << "We have the following vegetables  :\n";
+                cout << "1. Tomato\n";
+                cout << "2. Potato\n";
+                cout << "3. Onion\n";
+
+                int choice;
+                cout << "Please, select a vegetable from above (1, 2, 3): ";
+                cin >> choice;
+
+                if (choice >= 1 && choice <= 3)
+                {
+                    int qnt;
+                    cout << "Enter the quantity of you want to buy: ";
+                    cin >> qnt;
+
+                    cout << "You have selected " << o.veg.getName(choice - 1) << " units of " << qnt << " at tk " << o.veg.getVal(choice - 1) << " per KG.\n";
+                    cout << "Total cost for " << o.veg.getName(choice - 1) << " = " << o.veg.getVal(choice - 1) * qnt << endl;
+                }
+                else
+                {
+                    cout << "Invalid vegetable choice.\n";
+                }
+                getchar();
+                getchar();
+            }
+
+            /// Meats
+
+            else if (y == 2)
+            {
+                cout << "We have the following meat iteams:\n";
+                cout << "1. Beaf\n";
+                cout << "2. Mutton\n";
+                cout << "3. Chicken\n";
+
+                int choice;
+                cout << "Please, select a type of Meat from above (1, 2, 3): ";
+                cin >> choice;
+
+                if (choice >= 1 && choice <= 3)
+                {
+                    int qnt;
+                    cout << "Enter the quantity of you want to buy (in KG) : ";
+                    cin >> qnt;
+
+                    cout << "You have selected " << o.meat.getName(choice - 1) << " units of " << qnt << " at tk " << o.meat.getVal(choice - 1) << " per KG.\n";
+                    cout << "Total cost for " << o.meat.getName(choice - 1) << " = " << o.meat.getVal(choice - 1) * qnt << endl;
+                }
+                else
+                {
+                    cout << "Invalid Meat choice.\n";
+                }
+                getchar();
+                getchar();
+            }
+
+            /// Liquids
+
+            else if (y == 3)
+            {
+                cout << "We have the following item:\n";
+                cout << "1. Oil\n";
+                cout << "2. Cocacola\n";
+                cout << "3. Mojo\n";
+
+                int choice;
+                cout << "Please, select a type of Item from above (1, 2, 3): ";
+                cin >> choice;
+
+                if (choice >= 1 && choice <= 3)
+                {
+                    int qnt;
+                    cout << "Enter the quantity of you want to buy (in Liter) : ";
+                    cin >> qnt;
+
+                    cout << "You have selected " << o.lq.getName(choice - 1) << " units of " << qnt << " at tk " << o.lq.getVal(choice - 1) << " per Liter.\n";
+                    cout << "Total cost for " << o.lq.getName(choice - 1) << " = " << o.lq.getVal(choice - 1) * qnt << endl;
+                }
+                else
+                {
+                    cout << "Invalid item choice.\n";
+                }
+                getchar();
+                getchar();
+            }
+        }
 
 int main()
 {
